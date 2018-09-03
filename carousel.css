@@ -89,3 +89,10 @@ a
         margin-top: 7rem;
     }
 }
+.bkg{
+    background-size: cover;
+    -webkit-filter: blur(50%);
+}
+.customize_slide{
+
+}
