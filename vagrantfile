@@ -1,0 +1,46 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure(2) do |config|
+
+  # Brthrs Vagrant Box
+
+  # Box
+  config.vm.box = "brthrs/brthrs-vagrant-box"
+
+  # Custom SSH username
+  # The base box `ubuntu/xenial64` doesn't ship with a `vagrant` user. Thus we
+  # need to use the default user instead.
+  config.ssh.username = "ubuntu"
+
+  # Public Network
+  config.vm.network "public_network"
+
+  # Private Network
+  # config.vm.network "private_network", ip: "10.0.1.43"
+
+  # Private Network with Vagrant::Hostsupdater
+  # Installation of plugin `vagrant-hostsupdater` is required. See https://github.com/cogitatio/vagrant-hostsupdater.
+  # config.vm.hostname = "vagrant.dev"
+  # config.hostsupdater.aliases = ["vagrant.dev"]
+
+  # Synced Folders
+  config.vm.synced_folder "./", "/var/www/html", :owner => "www-data", :mount_options => [ "dmode=775", "fmode=774" ]
+
+  # VirtualBox configuration
+  # config.vm.provider "virtualbox" do |vb|
+  #   # Display the VirtualBox GUI when booting the machine
+  #   vb.gui = true
+  #
+  #   # Customize the amount of memory on the VM:
+  #   vb.memory = "2048"
+  # end
+
+  # VirtualBox VM NS_ERROR_FAILURE Fix (0x80004005)
+  # Disable the serial port to avoid VirtualBox from crashing
+  config.vm.provider "virtualbox" do |v|
+    v.customize ["modifyvm", :id, "--uart1", "0x3f8", "4"]
+    v.customize ["modifyvm", :id, "--uartmode1", "disconnected"]
+  end
+
+end
