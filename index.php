@@ -13,6 +13,21 @@
 
     <!-- Custom styles for this template -->
     <link href="carousel.css" rel="stylesheet">
+      <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+
+      <script>
+          var app = new Vue({
+              el: '#app',
+              data: {
+                  message: 'Hello Vue.js!'
+              },
+              methods: {
+                  reverseMessage: function () {
+                      this.message = this.message.split('').reverse().join('')
+                  }
+              }
+          })
+      </script>
   </head>
   <body>
 
@@ -57,7 +72,8 @@
               <div class="carousel-caption text-left">
                 <h1>Youssef Almardini <br> stage van 2018</h1>
                 <p>Ik wil graag alle mijn stage ervaringen delen, alles van mijn stage wordt uitgelegd op deze webite.</p>
-                <p><a class="btn btn-lg btn-primary" href="#" role="button">Read more</a></p>
+                <p><button class="btn btn-lg btn-primary" role="button">Read more</button></p>
+
               </div>
             </div>
           </div>
@@ -104,19 +120,19 @@
           <div class="col-lg-4">
             <img class="rounded-circle" src="code_coding_development_github_program_programming_icon_0.ico" alt="Generic placeholder image" width="140" height="140">
             <h2>GitHub</h2>
-            <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
+            <p> GitHub is een website die gebruikmaakt van Git om in groepen aan softwareontwikkeling te doen. Het werd geschreven met Ruby on Rails en Erlang. De ontwikkeling gebeurde door Chris Wanstrath, PJ Hyett en Tom Preston-Werner, ontwikkelaars van GitHub, Inc. (voorheen Logical Awesome). GitHub biedt zowel gratis als betaalde accounts voor opensourceproj.</p>
             <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
           </div><!-- /.col-lg-4 -->
           <div class="col-lg-4">
             <img class="rounded-circle" src="bootstrap-stack.png" alt="Generic placeholder image" width="140" height="140">
             <h2>bootstrap</h2>
-            <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
+            <p>Bootstrap is een verzameling hulpmiddelen voor het maken van websites en webtoepassingen. Het is gratis en open source. Het bevat sjablonen gebaseerd op HTML en CSS voor typografie, formulieren, knoppen, navigatie en andere interfaceonderdelen. Het bevat ook JavaScript-extensies. Het Bootstrap-framework is bedoeld om webontwikkeling te vereenvoudigen.</p>
             <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
           </div><!-- /.col-lg-4 -->
           <div class="col-lg-4">
             <img class="rounded-circle" src="wp.png" alt="Generic placeholder image" width="140" height="140">
             <h2>wordpress</h2>
-            <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+            <p>WordPress is vrije weblog-software, die onder de voorwaarden van de GNU General Public License (GPL) wordt gepubliceerd. WordPress is ontwikkeld door Matthew Mullenweg, maar het wordt door een flinke groep ontwikkelaars ondersteund. WordPress is het meest gebruikte contentmanagementsysteem.</p>
             <p><a class="btn btn-secondary" href="#" role="button">View details &raquo;</a></p>
           </div><!-- /.col-lg-4 -->
         </div><!-- /.row -->
